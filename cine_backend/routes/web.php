@@ -56,5 +56,5 @@ Route::delete('ticket-seats/{id}', [TicketSeatController::class, 'destroy']);
 
 
 Route::get('/test', function () {
-    return response()->json(['message' => 'API is working']);
+    return response()->json(['message' => 'API is working']); // prueba para verificar las rutas
 });
