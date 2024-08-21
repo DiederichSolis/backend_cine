@@ -62,4 +62,20 @@ class ShowtimeController extends Controller
             return response()->json(['message' => 'Showtime not found'], 404);
         }
     }
+
+    /**
+     * Get showtimes by movie_id.
+     *
+     * @param  int  $movie_id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getByMovieId($movie_id)
+    {
+        $showtimes = Showtime::where('movie_id', $movie_id)->get();
+        if ($showtimes->isNotEmpty()) {
+            return response()->json($showtimes);
+        } else {
+            return response()->json(['message' => 'No showtimes found for this movie'], 404);
+        }
+    }
 }

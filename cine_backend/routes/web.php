@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\RoomController;
@@ -29,6 +27,8 @@ Route::get('rooms/{id}', [RoomController::class, 'show']);
 Route::post('rooms', [RoomController::class, 'store']);
 Route::put('rooms/{id}', [RoomController::class, 'update']);
 Route::delete('rooms/{id}', [RoomController::class, 'destroy']);
+Route::get('/showtimes/movie/{movie_id}', [ShowtimeController::class, 'getByMovieId']);//mandato de infromacion por medio del id.movie
+
 
 Route::get('seats', [SeatController::class, 'index']);
 Route::get('seats/{id}', [SeatController::class, 'show']);
