@@ -26,8 +26,8 @@ Route::get('rooms', [RoomController::class, 'index']);
 Route::get('rooms/{id}', [RoomController::class, 'show']);
 Route::post('rooms', [RoomController::class, 'store']);
 Route::put('rooms/{id}', [RoomController::class, 'update']);
-Route::delete('rooms/{id}', [RoomController::class, 'destroy']);
-Route::get('/showtimes/movie/{movie_id}', [ShowtimeController::class, 'getByMovieId']);//mandato de infromacion por medio del id.movie
+Route::delete('rooms/{id}', [RoomController::class, 'destroy']); 
+
 
 
 Route::get('seats', [SeatController::class, 'index']);
@@ -41,6 +41,7 @@ Route::get('showtimes/{id}', [ShowtimeController::class, 'show']);
 Route::post('showtimes', [ShowtimeController::class, 'store']);
 Route::put('showtimes/{id}', [ShowtimeController::class, 'update']);
 Route::delete('showtimes/{id}', [ShowtimeController::class, 'destroy']);
+Route::get('/showtimes/movie/{movie_id}', [ShowtimeController::class, 'getByMovieId']);//mandato de infromacion por medio del id.movie
 
 Route::get('tickets', [TicketController::class, 'index']);
 Route::get('tickets/{id}', [TicketController::class, 'show']);
