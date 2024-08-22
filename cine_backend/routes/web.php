@@ -27,6 +27,7 @@ Route::get('rooms/{id}', [RoomController::class, 'show']);
 Route::post('rooms', [RoomController::class, 'store']);
 Route::put('rooms/{id}', [RoomController::class, 'update']);
 Route::delete('rooms/{id}', [RoomController::class, 'destroy']); 
+Route::get('/seats/room/{roomId}', [SeatController::class, 'findByRoomId']);//busaqueda por medio de roomid y asi asignar os asientos para la sala
 
 
 

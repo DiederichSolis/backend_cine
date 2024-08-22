@@ -64,4 +64,23 @@ class SeatController extends Controller
             return response()->json(['message' => 'Seat not found'], 404);
         }
     }
+
+    public function findByRoomId($roomId)
+    {
+        // Validar que room_id es un número entero
+        if (!is_numeric($roomId)) {
+            return response()->json(['message' => 'Invalid room ID'], 400);
+        }
+
+        // Buscar asientos que pertenezcan al room_id dado
+        $seats = Seat::where('room_id', $roomId)->get();
+
+        // Verificar si se encontraron asientos
+        if ($seats->isEmpty()) {
+            return response()->json(['message' => 'No seats found for this room'], 404);
+        }
+
+        // Devolver los asientos encontrados
+        return response()->json($seats);
+    }
 }
